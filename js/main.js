@@ -105,7 +105,7 @@ if (modal) {
       if (btn.tagName === 'A') return;
       
       // Otherwise, redirect to home page contact section
-      window.location.href = '../index.html#contact';
+      window.location.href = '/#contact';
     });
   });
 }
