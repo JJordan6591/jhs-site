@@ -50,6 +50,21 @@ const modal = document.getElementById('contactModal');
 const openFormButtons = document.querySelectorAll('[data-action="open-form"]');
 const closeFormButtons = document.querySelectorAll('.modal-close');
 
+// Define closeModal function outside the if block so it can be called from form handler
+function closeModal() {
+  if (!modal) return; // Safe to call even if modal doesn't exist
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  // Reset form if it exists
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.reset();
+    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+    const formStatus = document.getElementById('formStatus');
+    if (formStatus) formStatus.textContent = '';
+  }
+}
+
 // Only set up modal if it exists on the page
 if (modal) {
   function openModal() {
@@ -59,15 +74,6 @@ if (modal) {
     setTimeout(() => {
       document.getElementById('name')?.focus();
     }, 100);
-  }
-
-  function closeModal() {
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    // Reset form
-    document.getElementById('contactForm')?.reset();
-    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-    document.getElementById('formStatus').textContent = '';
   }
 
   openFormButtons.forEach(btn => {
