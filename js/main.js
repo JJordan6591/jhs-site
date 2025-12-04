@@ -104,7 +104,10 @@ if (modal) {
       // If button is a link, let it work normally
       if (btn.tagName === 'A') return;
       
-      // Otherwise, redirect to home page contact section
+      // Prevent default button behavior
+      e.preventDefault();
+      
+      // Redirect to home page contact section
       window.location.href = '/#contact';
     });
   });
