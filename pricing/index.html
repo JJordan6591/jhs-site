@@ -290,6 +290,8 @@
 
     .pricing-cta {
       margin-top: auto;
+      overflow: hidden;
+      border-radius: 999px; /* Match button border radius */
     }
 
     .pricing-cta .btn-primary,
@@ -300,6 +302,7 @@
       font-weight: 600;
       position: relative;
       overflow: hidden;
+      border-radius: 999px; /* Ensure rounded corners clip content */
     }
 
     /* Ensure button text stays above sliding background */
@@ -318,6 +321,12 @@
       transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                   transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                   box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Limit ripple effect size for pricing page buttons */
+    .pricing-cta .btn-primary::before {
+      max-width: 200px;
+      max-height: 200px;
     }
 
     /* Note Row */
