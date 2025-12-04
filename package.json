@@ -1,0 +1,7 @@
+{
+    "name": "jhs-site",
+    "version": "1.0.0",
+    "scripts": {
+      "deploy": "echo 'Static site deployment complete'"
+    }
+  }
