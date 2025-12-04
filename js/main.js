@@ -50,45 +50,59 @@ const modal = document.getElementById('contactModal');
 const openFormButtons = document.querySelectorAll('[data-action="open-form"]');
 const closeFormButtons = document.querySelectorAll('.modal-close');
 
-function openModal() {
-  modal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-  // Focus first input
-  setTimeout(() => {
-    document.getElementById('name')?.focus();
-  }, 100);
-}
-
-function closeModal() {
-  modal.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-  // Reset form
-  document.getElementById('contactForm')?.reset();
-  document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-  document.getElementById('formStatus').textContent = '';
-}
-
-openFormButtons.forEach(btn => {
-  btn.addEventListener('click', openModal);
-});
-
-closeFormButtons.forEach(btn => {
-  btn.addEventListener('click', closeModal);
-});
-
-// Close modal on overlay click
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    closeModal();
+// Only set up modal if it exists on the page
+if (modal) {
+  function openModal() {
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    // Focus first input
+    setTimeout(() => {
+      document.getElementById('name')?.focus();
+    }, 100);
   }
-});
 
-// Close modal on Escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
-    closeModal();
+  function closeModal() {
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    // Reset form
+    document.getElementById('contactForm')?.reset();
+    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+    document.getElementById('formStatus').textContent = '';
   }
-});
+
+  openFormButtons.forEach(btn => {
+    btn.addEventListener('click', openModal);
+  });
+
+  closeFormButtons.forEach(btn => {
+    btn.addEventListener('click', closeModal);
+  });
+
+  // Close modal on overlay click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Close modal on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+      closeModal();
+    }
+  });
+} else {
+  // If modal doesn't exist, redirect open-form buttons to contact section
+  openFormButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      // If button is a link, let it work normally
+      if (btn.tagName === 'A') return;
+      
+      // Otherwise, redirect to home page contact section
+      window.location.href = '../index.html#contact';
+    });
+  });
+}
 
 // Scroll to services
 document.querySelectorAll('[data-action="scroll-to-services"]').forEach(btn => {
