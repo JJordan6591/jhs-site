@@ -99,18 +99,21 @@ if (modal) {
   });
 } else {
   // If modal doesn't exist, redirect open-form buttons to contact section
-  openFormButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      // If button is a link, let it work normally
-      if (btn.tagName === 'A') return;
-      
-      // Prevent default button behavior
-      e.preventDefault();
-      
-      // Redirect to home page contact section
-      window.location.href = '/#contact';
+  if (openFormButtons.length > 0) {
+    openFormButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        // If button is a link, let it work normally
+        if (btn.tagName === 'A') return;
+        
+        // Prevent default button behavior
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Redirect to home page contact section
+        window.location.href = '/#contact';
+      });
     });
-  });
+  }
 }
 
 // Scroll to services

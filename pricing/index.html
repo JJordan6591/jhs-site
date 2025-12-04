@@ -216,6 +216,7 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       font-weight: 600;
+      z-index: 10;
     }
 
     .pricing-card h3 {
@@ -223,6 +224,10 @@
       font-size: 1.25rem;
       color: var(--teal-deep);
       font-weight: 700;
+    }
+
+    .pricing-card.popular h3 {
+      padding-right: 6.5rem; /* Reserve space for "Most popular" badge to prevent overlap */
     }
 
     .pricing-tagline {
@@ -293,6 +298,26 @@
       padding: 0.9rem 1.4rem;
       font-size: 0.95rem;
       font-weight: 600;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ensure button text stays above sliding background */
+    .pricing-cta .btn-ghost {
+      color: var(--teal-deep);
+      transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                  transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .pricing-cta .btn-ghost:hover {
+      color: var(--white);
+    }
+
+    .pricing-cta .btn-primary {
+      transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     /* Note Row */
