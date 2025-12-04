@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pricing | Jordan Home Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Transparent pricing for whole-home WiFi installation and networking services in Cincinnati. Simple, upfront pricing with no hidden fees." />
+  <meta name="keywords" content="WiFi pricing, home networking pricing, UniFi installation cost, Cincinnati" />
+  
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Pricing page specific styles using home page color scheme */
+    .pricing-hero {
+      background: linear-gradient(135deg, var(--mint) 0%, rgba(191, 232, 214, 0.8) 100%);
+      padding: 4rem 1.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(39, 164, 155, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .pricing-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-hero-eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal-deep);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      color: var(--teal-deep);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .pricing-hero p {
+      font-size: 1.05rem;
+      color: #234;
+      max-width: 36rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .hero-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(10, 110, 121, 0.2);
+      font-size: 0.85rem;
+      color: var(--teal-deep);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .hero-highlight-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--teal-accent);
+      flex-shrink: 0;
+    }
+
+    .hero-price-note {
+      font-size: 0.9rem;
+      color: #234;
+      margin-top: 1.5rem;
+    }
+
+    /* Billing Toggle */
+    .billing-toggle-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0 3rem;
+    }
+
+    .billing-toggle {
+      padding: 0.8rem 1.2rem;
+      border-radius: 999px;
+      background: var(--white);
+      border: 2px solid var(--teal-deep);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--charcoal);
+      box-shadow: 0 4px 12px rgba(10, 110, 121, 0.15);
+    }
+
+    .toggle-pill {
+      width: 56px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--mint-soft);
+      border: 2px solid var(--mint);
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    .toggle-pill:hover {
+      border-color: var(--teal-accent);
+    }
+
+    .toggle-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: var(--teal-deep);
+      transition: transform 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .toggle-pill.yearly .toggle-circle {
+      transform: translateX(26px);
+    }
+
+    .toggle-label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 500;
+    }
+
+    .toggle-save {
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: var(--mint);
+      color: var(--teal-deep);
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    /* Pricing Grid */
+    .pricing-section {
+      padding: 4rem 1.5rem;
+      background: var(--white);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .pricing-card {
+      background: var(--mint-soft);
+      border-radius: 24px;
+      padding: 2rem;
+      border: 2px solid rgba(191, 232, 214, 0.5);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      border-color: var(--mint);
+      background: var(--white);
+    }
+
+    .pricing-card.popular {
+      border-color: var(--teal-deep);
+      box-shadow: 0 0 0 2px rgba(10, 110, 121, 0.2), 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .pricing-card.popular:hover {
+      box-shadow: 0 0 0 2px rgba(10, 110, 121, 0.3), 0 16px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .badge-popular {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: var(--teal-deep);
+      color: var(--white);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+    }
+
+    .pricing-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.25rem;
+      color: var(--teal-deep);
+      font-weight: 700;
+    }
+
+    .pricing-tagline {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .price-main {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--charcoal);
+    }
+
+    .price-period {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .price-small-note {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+      font-size: 0.9rem;
+      color: #555;
+      flex-grow: 1;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 0.65rem;
+      line-height: 1.5;
+    }
+
+    .feature-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      margin-top: 0.4rem;
+      background: var(--teal-accent);
+      flex-shrink: 0;
+    }
+
+    .pricing-cta {
+      margin-top: auto;
+    }
+
+    .pricing-cta .btn-primary,
+    .pricing-cta .btn-ghost {
+      width: 100%;
+      padding: 0.9rem 1.4rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    /* Note Row */
+    .note-row {
+      font-size: 0.85rem;
+      color: #666;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid var(--soft-gray);
+    }
+
+    .note-row a {
+      color: var(--teal-deep);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .note-row a:hover {
+      color: var(--teal-accent);
+      text-decoration: underline;
+    }
+
+    /* Custom Block */
+    .custom-block {
+      margin-top: 3rem;
+      padding: 2rem;
+      border-radius: 20px;
+      border: 2px dashed var(--mint);
+      background: var(--mint-soft);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem 2rem;
+      font-size: 0.95rem;
+      color: #555;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .custom-block strong {
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+
+    .custom-block a.btn-inline {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      border: 2px solid var(--teal-deep);
+      text-decoration: none;
+      color: var(--teal-deep);
+      font-size: 0.85rem;
+      font-weight: 600;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .custom-block a.btn-inline:hover {
+      background: var(--teal-deep);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(10, 110, 121, 0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .pricing-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .custom-block {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-left">
+          <a href="index.html" class="logo-link" aria-label="Jordan Home Solutions home">
+            <div class="logo-mark" aria-hidden="true"><span></span></div>
+            <div class="brand-text">
+              <span class="brand-name">Jordan Home Solutions</span>
+              <span class="brand-tagline">WiFi · Networking · Home Tech</span>
+            </div>
+          </a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#process">How it works</a>
+          <a href="pricing.html">Pricing</a>
+          <button class="nav-cta" data-action="open-form">Book free WiFi check</button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PRICING HERO -->
+    <section class="pricing-hero">
+      <div class="pricing-hero-inner">
+        <div class="pricing-hero-eyebrow">Transparent pricing</div>
+        <h1>Simple pricing for fast, reliable home networks.</h1>
+        <div class="hero-highlight">
+          <span class="hero-highlight-dot"></span>
+          <span>Local installs in Cincinnati & surrounding areas</span>
+        </div>
+        <p>
+          Pick the setup that matches your home. All installs include on-site configuration,
+          basic security hardening, and a walkthrough so you actually understand your own network.
+        </p>
+        <p class="hero-price-note">
+          Hardware is billed separately at cost. No surprise monthly subscriptions.
+        </p>
+      </div>
+    </section>
+
+    <!-- BILLING TOGGLE -->
+    <div class="billing-toggle-wrapper">
+      <div class="billing-toggle">
+        <span>Billing</span>
+        <div class="toggle-pill" id="billingToggle" data-mode="one-time">
+          <div class="toggle-circle"></div>
+        </div>
+        <div class="toggle-label">
+          <span id="billingLabel">One-time install</span>
+          <span class="toggle-save">Save with bundles</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING CARDS -->
+    <section class="pricing-section">
+      <div class="pricing-grid" aria-label="Pricing plans">
+        <!-- Essential -->
+        <article class="pricing-card">
+          <h3>Essential Wi-Fi Tune-Up</h3>
+          <p class="pricing-tagline">For apartments & smaller homes that need Wi-Fi to just work.</p>
+
+          <div class="price-row">
+            <span class="price-main" data-one-time="$175" data-monthly="$25">$175</span>
+            <span class="price-period" id="plan1Period">one-time</span>
+          </div>
+          <div class="price-small-note">Existing router required. Ideal for &lt; 1,800 sq ft.</div>
+
+          <ul class="feature-list">
+            <li><span class="feature-dot"></span><span>Full Wi-Fi health check & speed test</span></li>
+            <li><span class="feature-dot"></span><span>Optimized placement & channel settings</span></li>
+            <li><span class="feature-dot"></span><span>Secure SSID & password best practices</span></li>
+            <li><span class="feature-dot"></span><span>Basic router cleanup & firmware check</span></li>
+          </ul>
+
+          <div class="pricing-cta">
+            <a href="index.html#contact" class="btn-ghost">Book Essential Tune-Up</a>
+          </div>
+        </article>
+
+        <!-- Whole-Home -->
+        <article class="pricing-card popular">
+          <div class="badge-popular">Most popular</div>
+          <h3>Whole-Home Wi-Fi Upgrade</h3>
+          <p class="pricing-tagline">For houses that want strong coverage in every room & backyard.</p>
+
+          <div class="price-row">
+            <span class="price-main" data-one-time="$425" data-monthly="$55">$425</span>
+            <span class="price-period" id="plan2Period">one-time</span>
+          </div>
+          <div class="price-small-note">
+            Hardware separate. Includes up to 2 access points; great for most family homes.
+          </div>
+
+          <ul class="feature-list">
+            <li><span class="feature-dot"></span><span>Ubiquiti router & AP design recommendations</span></li>
+            <li><span class="feature-dot"></span><span>Guest network + basic family/IoT separation</span></li>
+            <li><span class="feature-dot"></span><span>Parental controls & basic content filtering</span></li>
+            <li><span class="feature-dot"></span><span>Walkthrough of your network map & app</span></li>
+          </ul>
+
+          <div class="pricing-cta">
+            <a href="index.html#contact" class="btn-primary">Schedule Whole-Home Upgrade</a>
+          </div>
+        </article>
+
+        <!-- Smart Home & NAS -->
+        <article class="pricing-card">
+          <h3>Smart Home & NAS Setup</h3>
+          <p class="pricing-tagline">For power users who want local storage & smarter automations.</p>
+
+          <div class="price-row">
+            <span class="price-main" data-one-time="$675" data-monthly="$95">$675</span>
+            <span class="price-period" id="plan3Period">one-time</span>
+          </div>
+          <div class="price-small-note">
+            NAS hardware separate. Perfect for photos, media, and backups you control.
+          </div>
+
+          <ul class="feature-list">
+            <li><span class="feature-dot"></span><span>Everything in Whole-Home Wi-Fi Upgrade</span></li>
+            <li><span class="feature-dot"></span><span>Home NAS setup (users, shares, backups)</span></li>
+            <li><span class="feature-dot"></span><span>Secure remote access (VPN / tunnel) options</span></li>
+            <li><span class="feature-dot"></span><span>Optional integration with smart home hub</span></li>
+          </ul>
+
+          <div class="pricing-cta">
+            <a href="index.html#contact" class="btn-ghost">Plan Smart Home & NAS</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="note-row">
+        <span>All prices are estimates for typical homes. Final quote depends on size, wiring, and hardware selected.</span>
+        <span>Need something different? <a href="index.html#contact">Ask for a custom quote →</a></span>
+      </div>
+
+      <section class="custom-block">
+        <div>
+          <strong>Custom / Business Networks</strong><br />
+          Large homes, detached offices, or small business networks often need a custom plan
+          (multiple VLANs, cameras, VPN users, etc.).
+        </div>
+        <div>
+          Typical projects range from <strong>$900–$3,000</strong> (hardware + labor).  
+          <br />Hourly consulting available for specific issues or design reviews.
+        </div>
+        <a href="index.html#contact" class="btn-inline">
+          Get a custom quote
+          <span aria-hidden="true">→</span>
+        </a>
+      </section>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <div>© <span id="year"></span> Jordan Home Solutions. All rights reserved.</div>
+          <div class="footer-contact" style="margin-top: 0.5rem; font-size: 0.85rem;">
+            <a href="tel:+15551234567" style="color: #e8faf7; opacity: 0.9;">(555) 123-4567</a>
+            <span style="margin: 0 0.5rem;">·</span>
+            <a href="mailto:jordan@jordanhomesolutions.com" style="color: #e8faf7; opacity: 0.9;">jordan@jordanhomesolutions.com</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#top">Back to top</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#process">How it works</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Billing toggle functionality
+    const toggle = document.getElementById('billingToggle');
+    const billingLabel = document.getElementById('billingLabel');
+
+    const plans = [
+      { priceEl: document.querySelectorAll('[data-one-time][data-monthly]')[0], periodEl: document.getElementById('plan1Period') },
+      { priceEl: document.querySelectorAll('[data-one-time][data-monthly]')[1], periodEl: document.getElementById('plan2Period') },
+      { priceEl: document.querySelectorAll('[data-one-time][data-monthly]')[2], periodEl: document.getElementById('plan3Period') }
+    ];
+
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const mode = toggle.getAttribute('data-mode');
+
+        if (mode === 'one-time') {
+          toggle.setAttribute('data-mode', 'monthly');
+          toggle.classList.add('yearly');
+          billingLabel.textContent = 'Monthly support';
+          plans.forEach(p => {
+            if (p.priceEl && p.periodEl) {
+              const monthly = p.priceEl.getAttribute('data-monthly');
+              p.priceEl.textContent = monthly;
+              p.periodEl.textContent = 'per month';
+            }
+          });
+        } else {
+          toggle.setAttribute('data-mode', 'one-time');
+          toggle.classList.remove('yearly');
+          billingLabel.textContent = 'One-time install';
+          plans.forEach(p => {
+            if (p.priceEl && p.periodEl) {
+              const oneTime = p.priceEl.getAttribute('data-one-time');
+              p.priceEl.textContent = oneTime;
+              p.periodEl.textContent = 'one-time';
+            }
+          });
+        }
+      });
+    }
+
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
