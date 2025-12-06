@@ -98,7 +98,7 @@ if (modal) {
     }
   });
 } else {
-  // If modal doesn't exist, redirect open-form buttons to contact section
+  // If modal doesn't exist, redirect open-form buttons to contact page or contact section
   if (openFormButtons.length > 0) {
     openFormButtons.forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -109,8 +109,20 @@ if (modal) {
         e.preventDefault();
         e.stopPropagation();
         
-        // Redirect to home page contact section
-        window.location.href = '/#contact';
+        // If we're on the contact page, scroll to the form
+        if (window.location.pathname === '/contact' || window.location.pathname === '/contact/') {
+          const form = document.getElementById('contactForm');
+          if (form) {
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Focus first input after a brief delay
+            setTimeout(() => {
+              document.getElementById('name')?.focus();
+            }, 300);
+          }
+        } else {
+          // Redirect to contact page
+          window.location.href = '/contact';
+        }
       });
     });
   }
