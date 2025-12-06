@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact | Jordan Home Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Contact Jordan Home Solutions for a free WiFi assessment. Serving Cincinnati and surrounding areas." />
+  <meta name="keywords" content="contact, Cincinnati networking, WiFi assessment, home tech consultation" />
+  
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-left">
+          <a href="/" class="logo-link" aria-label="Jordan Home Solutions home">
+            <div class="logo-mark" aria-hidden="true"><span></span></div>
+            <div class="brand-text">
+              <span class="brand-name">Jordan Home Solutions</span>
+              <span class="brand-tagline">WiFi · Networking · Home Tech</span>
+            </div>
+          </a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+          <a href="/">Home</a>
+          <a href="/networking">Networking & WiFi</a>
+          <a href="/security">Security & Cameras</a>
+          <a href="/nas">NAS & Local Cloud</a>
+          <a href="/smart-home">Smart Home</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/why-unifi">Why UniFi</a>
+          <a href="/about">About</a>
+          <a href="/contact" class="active">Contact</a>
+          <a href="/faq">FAQ</a>
+          <button class="nav-cta" data-action="open-form">Book free WiFi check</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero">
+        <div class="page-hero-inner">
+          <div class="page-hero-eyebrow">Contact</div>
+          <h1 class="page-hero-title">Let's talk about your home network.</h1>
+          <p class="page-hero-subtitle">
+            Tell us about your home and current setup, and we'll follow up with a free assessment time.
+            No spam, no mailing list—just a straight answer on what it would take to fix your WiFi.
+          </p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="content-inner">
+          <div style="max-width: 600px; margin: 0 auto;">
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required aria-required="true" />
+                <span class="error-message" id="nameError"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required aria-required="true" />
+                <span class="error-message" id="emailError"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" />
+                <span class="error-message" id="phoneError"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="neighborhood">Neighborhood</label>
+                <input type="text" id="neighborhood" name="neighborhood" placeholder="e.g., Anderson, Indian Hill, etc." />
+              </div>
+              
+              <div class="form-group">
+                <label for="service">Service Interest</label>
+                <select id="service" name="service">
+                  <option value="">Select...</option>
+                  <option value="networking">Networking & WiFi</option>
+                  <option value="security">Security & Cameras</option>
+                  <option value="nas">NAS & Local Cloud</option>
+                  <option value="smart-home">Smart Home</option>
+                  <option value="not-sure">Not Sure</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Tell us about your current setup *</label>
+                <textarea id="message" name="message" rows="4" required aria-required="true" placeholder="What issues are you experiencing? What's your home size? What devices do you have?"></textarea>
+                <span class="error-message" id="messageError"></span>
+              </div>
+              
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">Send Request</button>
+              </div>
+              
+              <div class="form-status" id="formStatus"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <div>© <span id="year"></span> Jordan Home Solutions. All rights reserved.</div>
+          <div class="footer-contact" style="margin-top: 0.5rem; font-size: 0.85rem;">
+            <a href="tel:+15551234567">(555) 123-4567</a>
+            <span style="margin: 0 0.5rem;">·</span>
+            <a href="mailto:jordan@jordanhomesolutions.com">jordan@jordanhomesolutions.com</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/why-unifi">Why UniFi</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
