@@ -4,11 +4,9 @@
   <meta charset="UTF-8" />
   <title>Pricing | Jordan Home Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Transparent pricing for whole-home WiFi installation and networking services in Cincinnati. Simple, upfront pricing with no hidden fees." />
-  <meta name="keywords" content="WiFi pricing, home networking pricing, UniFi installation cost, Cincinnati" />
-  
+  <meta name="description" content="Transparent pricing for whole-home WiFi installation and networking services in Cincinnati." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
@@ -26,224 +24,177 @@
           </a>
         </div>
         <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
         <div class="nav-links" id="navLinks">
           <a href="/">Home</a>
-          <a href="/networking">Networking & WiFi</a>
-          <a href="/security">Security & Cameras</a>
-          <a href="/nas">NAS & Local Cloud</a>
-          <a href="/smart-home">Smart Home</a>
-          <a href="/pricing" class="active">Pricing</a>
-          <a href="/why-unifi">Why UniFi</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
-          <a href="/faq">FAQ</a>
+          <a href="/networking/">Networking &amp; WiFi</a>
+          <a href="/security/">Security &amp; Cameras</a>
+          <a href="/nas/">NAS &amp; Local Cloud</a>
+          <a href="/smart-home/">Smart Home</a>
+          <a href="/pricing/" class="active">Pricing</a>
+          <a href="/why-unifi/">Why UniFi</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+          <a href="/faq/">FAQ</a>
           <button class="nav-cta" data-action="open-form">Book free WiFi check</button>
         </div>
       </nav>
     </header>
 
-    <!-- PRICING HERO -->
-    <section class="pricing-hero">
-      <div class="pricing-hero-inner">
-        <div class="pricing-hero-eyebrow">Transparent pricing</div>
-        <h1>Simple pricing for fast, reliable home networks.</h1>
-        <div class="hero-highlight">
-          <span class="hero-highlight-dot"></span>
-          <span>Local installs in Cincinnati & surrounding areas</span>
+    <main class="page-main">
+      <!-- PRICING HERO -->
+      <section class="pricing-hero">
+        <div class="pricing-hero-inner">
+          <div class="pricing-hero-eyebrow">Transparent pricing</div>
+          <h1>Simple pricing for fast, reliable home networks.</h1>
+          <div class="hero-highlight">
+            <span class="hero-highlight-dot"></span>
+            <span>Local installs in Cincinnati &amp; surrounding areas</span>
+          </div>
+          <p>Pick the setup that matches your home. All installs include on-site configuration, basic security hardening, and a walkthrough so you actually understand your own network.</p>
+          <p class="hero-price-note">Hardware is billed separately at cost. No surprise monthly subscriptions.</p>
         </div>
-        <p>
-          Pick the setup that matches your home. All installs include on-site configuration,
-          basic security hardening, and a walkthrough so you actually understand your own network.
-        </p>
-        <p class="hero-price-note">
-          Hardware is billed separately at cost. No surprise monthly subscriptions.
-        </p>
-      </div>
-    </section>
-
-    <!-- BILLING TOGGLE -->
-    <div class="billing-toggle-wrapper">
-      <div class="billing-toggle">
-        <span>Billing</span>
-        <div class="toggle-pill" id="billingToggle" data-mode="one-time">
-          <div class="toggle-circle"></div>
-        </div>
-        <div class="toggle-label">
-          <span id="billingLabel">One-time install</span>
-          <span class="toggle-save">Save with bundles</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRICING CARDS -->
-    <section class="pricing-section">
-      <div class="pricing-grid" aria-label="Pricing plans">
-        <!-- Essential -->
-        <article class="pricing-card">
-          <h3>Essential Wi-Fi Tune-Up</h3>
-          <p class="pricing-tagline">For apartments & smaller homes that need Wi-Fi to just work.</p>
-
-          <div class="price-row">
-            <span class="price-main" data-one-time="$175" data-monthly="$25">$175</span>
-            <span class="price-period" id="plan1Period">one-time</span>
-          </div>
-          <div class="price-small-note">Existing router required. Ideal for &lt; 1,800 sq ft.</div>
-
-          <ul class="feature-list">
-            <li><span class="feature-dot"></span><span>Full Wi-Fi health check & speed test</span></li>
-            <li><span class="feature-dot"></span><span>Optimized placement & channel settings</span></li>
-            <li><span class="feature-dot"></span><span>Secure SSID & password best practices</span></li>
-            <li><span class="feature-dot"></span><span>Basic router cleanup & firmware check</span></li>
-          </ul>
-
-          <div class="pricing-cta">
-            <a href="/contact" class="btn-ghost">Book Essential Tune-Up</a>
-          </div>
-        </article>
-
-        <!-- Whole-Home -->
-        <article class="pricing-card popular">
-          <div class="badge-popular">Most popular</div>
-          <h3>Whole-Home Wi-Fi Upgrade</h3>
-          <p class="pricing-tagline">For houses that want strong coverage in every room & backyard.</p>
-
-          <div class="price-row">
-            <span class="price-main" data-one-time="$425" data-monthly="$55">$425</span>
-            <span class="price-period" id="plan2Period">one-time</span>
-          </div>
-          <div class="price-small-note">
-            Hardware separate. Includes up to 2 access points; great for most family homes.
-          </div>
-
-          <ul class="feature-list">
-            <li><span class="feature-dot"></span><span>Ubiquiti router & AP design recommendations</span></li>
-            <li><span class="feature-dot"></span><span>Guest network + basic family/IoT separation</span></li>
-            <li><span class="feature-dot"></span><span>Parental controls & basic content filtering</span></li>
-            <li><span class="feature-dot"></span><span>Walkthrough of your network map & app</span></li>
-          </ul>
-
-          <div class="pricing-cta">
-            <a href="/contact" class="btn-primary">Schedule Whole-Home Upgrade</a>
-          </div>
-        </article>
-
-        <!-- Smart Home & NAS -->
-        <article class="pricing-card">
-          <h3>Smart Home & NAS Setup</h3>
-          <p class="pricing-tagline">For power users who want local storage & smarter automations.</p>
-
-          <div class="price-row">
-            <span class="price-main" data-one-time="$675" data-monthly="$95">$675</span>
-            <span class="price-period" id="plan3Period">one-time</span>
-          </div>
-          <div class="price-small-note">
-            NAS hardware separate. Perfect for photos, media, and backups you control.
-          </div>
-
-          <ul class="feature-list">
-            <li><span class="feature-dot"></span><span>Everything in Whole-Home Wi-Fi Upgrade</span></li>
-            <li><span class="feature-dot"></span><span>Home NAS setup (users, shares, backups)</span></li>
-            <li><span class="feature-dot"></span><span>Secure remote access (VPN / tunnel) options</span></li>
-            <li><span class="feature-dot"></span><span>Optional integration with smart home hub</span></li>
-          </ul>
-
-          <div class="pricing-cta">
-            <a href="/contact" class="btn-ghost">Plan Smart Home & NAS</a>
-          </div>
-        </article>
-      </div>
-
-      <div class="note-row">
-        <span>All prices are estimates for typical homes. Final quote depends on size, wiring, and hardware selected.</span>
-        <span>Need something different? <a href="/contact">Ask for a custom quote →</a></span>
-      </div>
-
-      <section class="custom-block">
-        <div>
-          <strong>Custom / Business Networks</strong><br />
-          Large homes, detached offices, or small business networks often need a custom plan
-          (multiple VLANs, cameras, VPN users, etc.).
-        </div>
-        <div>
-          Typical projects range from <strong>$900–$3,000</strong> (hardware + labor).  
-          <br />Hourly consulting available for specific issues or design reviews.
-        </div>
-        <a href="/contact" class="btn-inline">
-          Get a custom quote
-          <span aria-hidden="true">→</span>
-        </a>
       </section>
-    </section>
 
+      <!-- BILLING TOGGLE -->
+      <div class="billing-toggle-wrapper">
+        <div class="billing-toggle">
+          <span>Billing</span>
+          <div class="toggle-pill" id="billingToggle" data-mode="one-time">
+            <div class="toggle-circle"></div>
+          </div>
+          <div class="toggle-label">
+            <span id="billingLabel">One-time install</span>
+            <span class="toggle-save">Save with bundles</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRICING CARDS -->
+      <section class="pricing-section">
+        <div class="pricing-grid" aria-label="Pricing plans">
+          <article class="pricing-card">
+            <h3>Essential Wi-Fi Tune-Up</h3>
+            <p class="pricing-tagline">For apartments &amp; smaller homes that need Wi-Fi to just work.</p>
+            <div class="price-row">
+              <span class="price-main" data-one-time="$175" data-monthly="$25">$175</span>
+              <span class="price-period" id="plan1Period">one-time</span>
+            </div>
+            <div class="price-small-note">Existing router required. Ideal for &lt; 1,800 sq ft.</div>
+            <ul class="feature-list">
+              <li><span class="feature-dot"></span><span>Full Wi-Fi health check &amp; speed test</span></li>
+              <li><span class="feature-dot"></span><span>Optimized placement &amp; channel settings</span></li>
+              <li><span class="feature-dot"></span><span>Secure SSID &amp; password best practices</span></li>
+              <li><span class="feature-dot"></span><span>Basic router cleanup &amp; firmware check</span></li>
+            </ul>
+            <div class="pricing-cta">
+              <a href="/contact/" class="btn-ghost">Book Essential Tune-Up</a>
+            </div>
+          </article>
+
+          <article class="pricing-card popular">
+            <div class="badge-popular">Most popular</div>
+            <h3>Whole-Home Wi-Fi Upgrade</h3>
+            <p class="pricing-tagline">For houses that want strong coverage in every room &amp; backyard.</p>
+            <div class="price-row">
+              <span class="price-main" data-one-time="$425" data-monthly="$55">$425</span>
+              <span class="price-period" id="plan2Period">one-time</span>
+            </div>
+            <div class="price-small-note">Hardware separate. Includes up to 2 access points; great for most family homes.</div>
+            <ul class="feature-list">
+              <li><span class="feature-dot"></span><span>Ubiquiti router &amp; AP design recommendations</span></li>
+              <li><span class="feature-dot"></span><span>Guest network + basic family/IoT separation</span></li>
+              <li><span class="feature-dot"></span><span>Parental controls &amp; basic content filtering</span></li>
+              <li><span class="feature-dot"></span><span>Walkthrough of your network map &amp; app</span></li>
+            </ul>
+            <div class="pricing-cta">
+              <a href="/contact/" class="btn-primary">Schedule Whole-Home Upgrade</a>
+            </div>
+          </article>
+
+          <article class="pricing-card">
+            <h3>Smart Home &amp; NAS Setup</h3>
+            <p class="pricing-tagline">For power users who want local storage &amp; smarter automations.</p>
+            <div class="price-row">
+              <span class="price-main" data-one-time="$675" data-monthly="$95">$675</span>
+              <span class="price-period" id="plan3Period">one-time</span>
+            </div>
+            <div class="price-small-note">NAS hardware separate. Perfect for photos, media, and backups you control.</div>
+            <ul class="feature-list">
+              <li><span class="feature-dot"></span><span>Everything in Whole-Home Wi-Fi Upgrade</span></li>
+              <li><span class="feature-dot"></span><span>Home NAS setup (users, shares, backups)</span></li>
+              <li><span class="feature-dot"></span><span>Secure remote access (VPN / tunnel) options</span></li>
+              <li><span class="feature-dot"></span><span>Optional integration with smart home hub</span></li>
+            </ul>
+            <div class="pricing-cta">
+              <a href="/contact/" class="btn-ghost">Plan Smart Home &amp; NAS</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="note-row">
+          <span>All prices are estimates for typical homes. Final quote depends on size, wiring, and hardware selected.</span>
+          <span>Need something different? <a href="/contact/">Ask for a custom quote →</a></span>
+        </div>
+
+        <div class="custom-block">
+          <div>
+            <strong>Custom / Business Networks</strong><br />
+            Large homes, detached offices, or small business networks often need a custom plan (multiple VLANs, cameras, VPN users, etc.).
+          </div>
+          <div>
+            Typical projects range from <strong>$900–$3,000</strong> (hardware + labor).<br />
+            Hourly consulting available for specific issues or design reviews.
+          </div>
+          <a href="/contact/" class="btn-inline">Get a custom quote <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </main>
     <!-- FOOTER -->
     <footer>
       <div class="footer-inner">
         <div>
           <div>© <span id="year"></span> Jordan Home Solutions. All rights reserved.</div>
-          <div class="footer-contact" style="margin-top: 0.5rem; font-size: 0.85rem;">
-            <a href="tel:+15551234567">(555) 123-4567</a>
-            <span style="margin: 0 0.5rem;">·</span>
-            <a href="mailto:jordan@jordanhomesolutions.com">jordan@jordanhomesolutions.com</a>
+          <div class="footer-contact" style="margin-top:.5rem;font-size:.84rem;">
+            <a href="tel:+15135817041">(513) 581-7041</a>
+            <span style="margin:0 .5rem">·</span>
+            <a href="mailto:jjordan6591@gmail.com">jjordan6591@gmail.com</a>
           </div>
         </div>
         <div class="footer-links">
           <a href="/">Home</a>
-          <a href="/pricing">Pricing</a>
-          <a href="/why-unifi">Why UniFi</a>
-          <a href="/contact">Contact</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/why-unifi/">Why UniFi</a>
+          <a href="/contact/">Contact</a>
         </div>
       </div>
     </footer>
   </div>
-
   <script src="../js/main.js"></script>
+</body>
+</html>
   <script>
-    // Billing toggle functionality
     const toggle = document.getElementById('billingToggle');
     const billingLabel = document.getElementById('billingLabel');
-
     const plans = [
       { priceEl: document.querySelectorAll('[data-one-time][data-monthly]')[0], periodEl: document.getElementById('plan1Period') },
       { priceEl: document.querySelectorAll('[data-one-time][data-monthly]')[1], periodEl: document.getElementById('plan2Period') },
       { priceEl: document.querySelectorAll('[data-one-time][data-monthly]')[2], periodEl: document.getElementById('plan3Period') }
     ];
-
     if (toggle) {
       toggle.addEventListener('click', () => {
         const mode = toggle.getAttribute('data-mode');
-
         if (mode === 'one-time') {
-          toggle.setAttribute('data-mode', 'monthly');
-          toggle.classList.add('yearly');
+          toggle.setAttribute('data-mode','monthly'); toggle.classList.add('yearly');
           billingLabel.textContent = 'Monthly support';
-          plans.forEach(p => {
-            if (p.priceEl && p.periodEl) {
-              const monthly = p.priceEl.getAttribute('data-monthly');
-              p.priceEl.textContent = monthly;
-              p.periodEl.textContent = 'per month';
-            }
-          });
+          plans.forEach(p => { if (p.priceEl && p.periodEl) { p.priceEl.textContent = p.priceEl.getAttribute('data-monthly'); p.periodEl.textContent = 'per month'; }});
         } else {
-          toggle.setAttribute('data-mode', 'one-time');
-          toggle.classList.remove('yearly');
+          toggle.setAttribute('data-mode','one-time'); toggle.classList.remove('yearly');
           billingLabel.textContent = 'One-time install';
-          plans.forEach(p => {
-            if (p.priceEl && p.periodEl) {
-              const oneTime = p.priceEl.getAttribute('data-one-time');
-              p.priceEl.textContent = oneTime;
-              p.periodEl.textContent = 'one-time';
-            }
-          });
+          plans.forEach(p => { if (p.priceEl && p.periodEl) { p.priceEl.textContent = p.priceEl.getAttribute('data-one-time'); p.periodEl.textContent = 'one-time'; }});
         }
       });
     }
-
-    // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-</body>
-</html>
